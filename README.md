@@ -17,8 +17,7 @@ Education
 
 Experience
 ----------
--
-In Home Technician, Shaw Communications (2009-2020, Edmonton, AB)
+**In Home Technician, Shaw Communications** (2009-2020, Edmonton, AB)
 
 
 Skills
