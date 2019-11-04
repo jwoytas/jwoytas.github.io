@@ -1,7 +1,7 @@
 Jared Woytas
 ======
 
-#### Technology enthusiast with a strong background in, telelcommunications, programming, data analytics
+#### Technology enthusiast with a strong background in telelcommunications, programming, data analytics
 ###### [ [jwoytas.github.io](http://jwoytas.github.io) ] . [ jwoytas@gmail.com ] . [ 780 819 9427 ]
 
 
@@ -30,7 +30,7 @@ Skills
 
 Awards
 ------
-- **Rutherford Scholarship Award**, St. Albert Catholic High School (1999)
+**Rutherford Scholarship Award**, St. Albert Catholic High School (1999)
 
 Projects
 --------
