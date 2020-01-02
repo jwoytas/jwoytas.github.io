@@ -2,7 +2,7 @@ Jared Woytas
 ======
 
 #### Technology enthusiast with a strong background in telelcommunications, programming, data analytics
-###### [ [jwoytas.github.io](http://jwoytas.github.io) ] . [ jwoytas@gmail.com ] . [ 780 819 9427 ]
+###### [ [jwoytas.github.io](http://jwoytas.github.io) ] . 
 
 
 Education
@@ -12,7 +12,6 @@ Education
 
 **Faculty of Extension, University of Alberta** (2019)
 - Python Programming and Machine Learning I
-- Python Programming and Machine Learning II
 
 
 Experience
@@ -25,10 +24,10 @@ Skills
 **Programming:** Python, Java, SQL, git, HTML/CSS
 
 
-
 Awards
 ------
 **Rutherford Scholarship Award**, St. Albert Catholic High School (1999)
+
 
 Projects
 --------
