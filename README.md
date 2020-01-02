@@ -21,7 +21,7 @@ Experience
 
 Skills
 ------
-**Programming:** Python, Java, SQL, git, HTML/CSS
+**Programming:** Python, Java, SQL, HTML/CSS
 
 
 Awards
