@@ -1,36 +1,21 @@
-Jared Woytas
-======
+#### My personal GitHub Page
+This is work in progress - I am learning to use GitHub Pages and Jekyll.
+I am also learning to use VSCode and Atom to interact with GitHub.
+This is so I can clone, branch, pull and merge repository changes between my desktop and my laptop.
 
-#### Technology enthusiast with a strong background in telelcommunications, programming, data analytics
-###### [ [jwoytas.github.io](http://jwoytas.github.io) ] . 
+For now this readme will serve as some notes and links to help me remember what is going on.
 
-
-Education
----------
-**Bachelor of Science, University of Alberta** (2004)
-- Specialization in Computing Science
-
-**Faculty of Extension, University of Alberta** (2019)
-- Python Programming and Machine Learning I
+Other things to look at:
+*  Implementing Jekyll themes
+*  Look at Publii static CMS
 
 
-Experience
-----------
-**In Home Technician, Shaw Communications** (2009-2020, Edmonton, AB)
+##### To launch the local jekyll server that rebuilds any time you make a change
+```bash
+bundle exec jekyll serve
+```
 
-
-Skills
-------
-**Programming:** Python, Java, SQL, HTML/CSS
-
-
-Awards
-------
-**Rutherford Scholarship Award**, St. Albert Catholic High School (1999)
-
-
-Projects
---------
-**[*Hubbles Lake Resort*](http://hubbleslakeresort.ca)** (2018)
-- Create and maintain Wordpress website including domain registration, themes and plugins
-- Create and maintain domain users, email accounts and guest information
+##### To build the static site and
+```bash
+bundle exec jekyll build
+```
