@@ -19,5 +19,3 @@ bundle exec jekyll serve
 ```bash
 bundle exec jekyll build
 ```
-
-# Just checking something
