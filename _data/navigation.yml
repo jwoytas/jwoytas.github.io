@@ -6,5 +6,6 @@
   link: /blog.html
 - name: Staff
   link: /staff.html
-  name: Resume
-  link: /resume.html
+- name: Resume
+  link: /resume
+
