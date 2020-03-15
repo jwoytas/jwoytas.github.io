@@ -8,6 +8,15 @@ url: "https://jwoytas.github.io" # the base hostname & protocol for your site, e
 # twitter_username: jwoytas
 github_username:  jwoytas
 
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+theme: jekyll-theme-hacker
+show_downloads: false
+google_analytics:
+
 collections:
   authors:
     output: true
@@ -26,10 +35,4 @@ defaults:
       path: ""
     values:
       layout: "default"
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
 
-theme: jekyll-theme-hacker
-# theme: "jekyll-theme-minimal"
