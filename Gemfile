@@ -4,9 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# gem "rails"
-gem "jekyll"
-gem "jekyll-watch"
+gem "github-pages", group: :jekyll_plugins
 
 
 group :jekyll_plugins do
@@ -16,6 +14,4 @@ group :jekyll_plugins do
 end
 
 
-gem "github-pages", group: :jekyll_plugins
-
-gem 'faraday', '0.9.2'
+# gem 'faraday', '0.9.2'

@@ -1,3 +1,13 @@
+title: jwoytas.github.io
+# email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Working towards creating simple yet powerful static websites
+  using GitHub Pages and Jekyll
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://jwoytas.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jwoytas
+github_username:  jwoytas
+
 collections:
   authors:
     output: true
@@ -21,5 +31,5 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# theme: jekyll-theme-hacker
 theme: jekyll-theme-hacker
+# theme: "jekyll-theme-minimal"
