@@ -15,7 +15,10 @@ plugins:
 
 theme: jekyll-theme-hacker
 show_downloads: false
-google_analytics:
+
+# Google Analytics
+google_analytics: UA-162526456-1
+
 
 collections:
   authors:
