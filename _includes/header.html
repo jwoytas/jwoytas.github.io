@@ -1,7 +1,16 @@
 <div class="header">
-    <h1 class="title">{{site.data.data.name}}</h1>
-    {% if site.data.data.support_dark_mode%}
-      <input type="checkbox" id="switch" name="mode" class="toggle-dark"></input>
-      <label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
-    {%endif%}
-  </div>
+    <div class="profile" style="background-image:url('/assets/images/{{ site.data.data.profile_img }}')"></div>
+    <div class="title-toggle">
+
+        <div>
+            <h1 class="title">{{site.data.data.name}}</h1>
+        </div>
+        {% if site.data.data.support_dark_mode%}
+        <div class="toggle">
+            <input type="checkbox" id="switch" name="mode" class="toggle-dark" />
+            <label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
+        </div>
+        {%endif%}
+
+    </div>
+</div>
