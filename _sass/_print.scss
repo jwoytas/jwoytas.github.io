@@ -3,18 +3,24 @@
         size: A4;
     }
     .container {
-        margin:0;
-        padding:0;
+        margin: 0;
+        padding: 0;
         box-shadow: none;
         background-color: #ffffff;
         width: 1000px;
+
         .container-block {
-            padding:0;
-            
+            padding: 0;
         }
+
         .header {
             input, label {
                 display: none;
+            }
+
+            .profile {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
     }
