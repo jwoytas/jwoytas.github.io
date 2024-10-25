@@ -5,7 +5,7 @@
     {% if contact.email %}
         <div class="contact-item">
             <i data-feather="mail"></i>
-            <a href="#">
+            <a href="mailto:{{contact.email}}" target="_blank">
                 {{contact.email}}
             </a>
         </div>
@@ -23,7 +23,7 @@
     {% if contact.github %}
         <div class="contact-item">
             <i data-feather="github"></i>
-            <a href="https://github.com/{{contact.github}}">
+            <a href="https://github.com/{{contact.github}}" target="_blank">
                 {{contact.github}}
             </a>
         </div>
@@ -32,7 +32,7 @@
     {% if contact.linkedin %}
         <div class="contact-item">
             <i data-feather="linkedin"></i>
-            <a href="https://linkedin.com/in/{{contact.linkedin}}">
+            <a href="https://linkedin.com/in/{{contact.linkedin}}" target="_blank">
                 {{contact.linkedin}}
             </a>
         </div>
