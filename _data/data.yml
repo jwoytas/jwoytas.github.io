@@ -1,11 +1,11 @@
-name: Beth Woytas
+name: Jared Woytas
 profile_img: profile.png
 support_dark_mode: true
 fork: false
 
 # Sidebar
 contact:
-  email: jwoytas@gmail.com
+  email: jwoytas@okaki.com
   github: jwoytas
   linkedin: jwoytas
   phone: 
@@ -17,27 +17,52 @@ contact:
 
 
 education:
-  - degree: MSc in Informatics
-    time: 2014-2016
-    university: Ionian University
+  - degree: Bachelor, Science 
+    detail: Sp. Computer Science
+    time: 2001 - 2005
+    university: University of Alberta
 
-  - degree: BSc in Computer Science
-    time: 2010-2014
-    university: Ionian University
+  - degree: Machine Learning Technician
+    time: 2020
+    university: AMII
 
 skills:
   - category: Backend
     skill: 
-      - Go
-      - Rust
+      - .NET
+      - SQL Server
+      - Entity Framework
+      - SQL
+      - Docker
+      - Authentication
+      - Authorization
+      - API Design
+ 
   - category: Frontend
     skill:
-      - React
-      - Typescript
-  - category: DevOps
+      - WPF + XAML
+      - Blazor
+      - HTML + CSS
+      - Javascript
+
+  - category: Cloud
     skill:
-      - Docker
-      - Kubernetes 
+      - Azure Focused
+      - Web Apps
+      - Static Apps
+      - Blob Storage
+
+  - category: Architecture
+    skill:
+      - Design Principles
+      - Design Patterns
+      - MVVM
+      - Testing
+      - AI Coding Assistance
+      - Git + GitHub
+      - Deployment Assistance
+ 
+
 
 # Profile
 profile: |
@@ -50,28 +75,35 @@ profile: |
 # Experience
 experience:
   - role: Software Engineer
-    time: 2020-Present
-    company: Google
+    time: 2020 - Present
+    company: Okaki
     details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-      fugiat nulla pariatur.
+      As a .NET developer with Okaki my contributions have provided significant value to our customers. Specific project examples include&#58 
+    projects: 
+      - project: EMR Applications
+        description: Used by doctors, nurses and pharmacists for for efficient patient management. 
+      - project: Document Management
+        description: Managing patient documentation including scanned records, images, faxes, forms, referrals and disclosures. Documents accross multiple applications would then be stored + retrieved from Azure. 
+      - project: Appointments + Booking Sites
+        description: Created public booking sites to allow for Patients to self book appointments for specific health services. Appiontments could also be created and managed by healthcare providers and pharmicists. Includes support for different services types, durations, resources and schedules. Leveraged a thrid party api to handle availability. 
+      - project: Patient Vitals Integration
+        description: Integration of third party patient vital montoring infromation. Polling of self record Patient Vitals for availability and reporting within EMR applications.
+      - project: IRRS Patient Assessments
+        description: Collection of significant amounts patient information for Contact and HomeCare Assessments. Data needed to be validated to rigid specifications and then submitted to third party systems using FHIR specifcations. 
     technologies_used: | 
       Go, Angular, Typescript, C++
   
-  - role: Researcher
-    time: 2016-2020
-    company: Microsoft
+  - role: Technician
+    time: 2009 - 2020
+    company: Shaw Communications
     details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-      fugiat nulla pariatur.
-    technologies_used: | 
-      Python, Tensorflow, Keras, Matlab
+      Residential installation of Cable TV, Internet and Telephone services
+
+  - role: System Analyst II
+    time: 2005 - 2009
+    company: Haemonetics
+    details: |
+      Database Web Programmer - Oracle + JAVA
 
 publications:
   - title: Random title of paper. An interesting one.

@@ -2,22 +2,33 @@
     .title {
         @include header;
     }
+
     .experience-item {
+        margin-bottom: 10px;
+
         .role {
             @include sub-header;
         }
+
         .company {
             @include body-text;
             font-weight: bold;
+
             .time {
                 float: right;
                 color: var(--fg-color-title-sm);
                 font-weight: 100;
             }
         }
+
         .details {
             @include body-text;
+
+            .project {
+                font-weight: bold;
+            }
         }
+
         .technologies {
             @include body-text;
         }
