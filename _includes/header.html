@@ -1,9 +1,14 @@
 {% if site.data.data.support_dark_mode%}
-    <div class="toggle">
-        <input type="checkbox" id="switch" name="mode" class="toggle-dark" checked/>
-        <label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
-    </div>
+<div class="icon-bar">
+    <input type="checkbox" id="switch" name="mode" class="toggle-dark" checked />
+    <label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
+    <a class="dl-icon" href="{{'/assets/Resume - Jared Woytas.pdf' | absolute_url}}" target="_blank">
+        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+    </a>
+</div>
 {%endif%}
+
+
 
 <div class="header">
     <div class="profile-pic" style="background-image:url('/assets/images/{{ site.data.data.profile_img }}')"></div>

@@ -1,7 +1,9 @@
-.toggle {
-    position: absolute;
+.icon-bar {
+    display: flex;
+    flex-direction: row-reverse;
     top: 0;
     right: 0;
+    margin-bottom: -2rem;
 
     input[type="checkbox"] {
         width: 0;
@@ -14,10 +16,17 @@
         cursor: pointer;
         color: var(--fg-color-dark);
         transform: scale(0.75);
+        margin-top: -5px;
+    }
+
+    .dl-icon {
         margin-right: 0.5rem;
-        margin-top: 0.5rem;
+        margin-top: -0.25rem;
+        color: var(--fg-color-dark);
     }
 }
+
+
 
 .header {
     width: 90%;
@@ -28,6 +37,8 @@
     /*justify-content: space-between;*/
     align-items: center;
 
+
+
     .profile-pic {
         display: inline-block;
         min-width: 100px;
@@ -37,7 +48,6 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
