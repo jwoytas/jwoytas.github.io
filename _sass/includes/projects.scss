@@ -2,11 +2,17 @@
     .title {
         @include header;
     }
+
     .project {
         margin-bottom: 20px;
+
         .project-link {
-            @include body-text;
+            /*@include body-text;*/
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--fg-color-title-sm);
         }
+
         .details {
             @include body-text;
         }

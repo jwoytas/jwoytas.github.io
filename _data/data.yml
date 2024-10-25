@@ -5,7 +5,7 @@ fork: false
 
 # Sidebar
 contact:
-  email: jwoytas@okaki.com
+  email: jwoytas@gmail.com
   github: jwoytas
   linkedin: jwoytas
   phone: 
@@ -80,7 +80,7 @@ experience:
         details:
           - Team Developer and Mentor
           - Significant development contributions for multiple applications + releases.
-      - project: Document Management API + Azure Cloud Storage
+      - project: Document Management API with Azure Storage
         description: Managed patient documentation, including scanned records and forms, across multiple applications with Azure.  
         details: 
           - Lead Developer

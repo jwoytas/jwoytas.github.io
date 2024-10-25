@@ -1,0 +1,17 @@
+{% assign recognition = site.data.data.recognition %}
+{% if recognition %}
+<section class="publications">
+    <h2 class="title">Recognition</h2>
+    <div class="publication-items">
+        {% for pub in recognition%}
+        <div class="publication-item">
+            <div class="publication-title">
+                {{pub.title}}
+            </div>
+            <div class="authors">{{pub.authors}}</div>
+            <div class="conference">{{pub.time}}</div>
+        </div>
+        {%endfor%}
+    </div>
+</section>
+{% endif %}

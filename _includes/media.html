@@ -1,0 +1,20 @@
+{% assign medias = site.data.data.media %}
+{% if medias %}
+<section class="medias">
+    <h2 class="title">Media</h2>
+    {% for m in medias %}
+    <div class="media">
+        <div>
+            <a class="media-link" href="{{m.link}}" target="_blank" >
+                {{m.title}}
+            </a>
+        </div>
+        <div class="source">
+            {{m.source}}
+            <span class="date">{{m.date}}</span>
+        </div>
+        <p class="details">{{m.details}}</p>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}

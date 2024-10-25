@@ -1,0 +1,33 @@
+.medias {
+    .title {
+        @include header;
+    }
+
+    .media {
+        margin-bottom: 25px;
+
+
+        .media-link {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--fg-color-title-sm);
+        }
+
+
+        .source {
+            @include body-text;
+            font-weight: 700;
+            color: var(--fg-color-body);
+
+            .date {
+                color: var(--fg-color-title-sm);
+                float: right;
+                font-weight: 100;
+            }
+        }
+
+        .details {
+            @include body-text;
+        }
+    }
+}

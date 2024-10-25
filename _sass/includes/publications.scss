@@ -2,21 +2,24 @@
     .title {
         @include header;
     }
+
     .publication-items {
         .publication-item {
             margin-bottom: 20px;
+
             .publication-title {
-                a {
-                    text-decoration: none;
-                    font-weight: bold;
-                    @include body-text; 
-                }
+                text-decoration: none;
+                font-weight: bold;
+                @include body-text;
+                color: var(--fg-color-title-sm);
             }
+
             .authors {
-                @include body-text; 
+                @include body-text;
             }
+
             .conference {
-                @include body-text; 
+                @include body-text;
                 color: var(--fg-color-title-sm);
                 font-weight: 100;
             }

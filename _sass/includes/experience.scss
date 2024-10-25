@@ -4,7 +4,7 @@
     }
 
     .experience-item {
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
 
         .role {
             @include sub-header;
@@ -13,10 +13,10 @@
         .company {
             @include body-text;
             font-weight: bold;
+            color: var(--fg-color-title-sm);
 
             .time {
                 float: right;
-                color: var(--fg-color-title-sm);
                 font-weight: 100;
             }
         }
@@ -26,10 +26,11 @@
 
             .project {
                 font-weight: bold;
+                color: var(--fg-color-title-sm);
             }
 
             .italic {
-                font-style: italic;
+                font-style: italic
             }
         }
 

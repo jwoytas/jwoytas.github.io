@@ -1,7 +1,7 @@
 {% assign contact = site.data.data.contact %}
 {% if contact %}
 <section class="contact">
-    <div class="title">Contact</div>
+    <!--<div class="title">Contact</div>-->
     {% if contact.email %}
         <div class="contact-item">
             <i data-feather="mail"></i>
@@ -23,8 +23,9 @@
     {% if contact.github %}
         <div class="contact-item">
             <i data-feather="github"></i>
-            <a href="https://github.com/{{contact.github}}" target="_blank">
-                {{contact.github}}
+            <!--<a href="https://github.com/{{contact.github}}">{{contact.github}}</a>-->
+            <a href="https://{{contact.github}}.github.io" target="_blank">
+                {{contact.github}}.github.io
             </a>
         </div>
     {% endif %}
@@ -41,7 +42,7 @@
     {% if contact.twitter %}
         <div class="contact-item">
             <i data-feather="twitter"></i>
-            <a href="https://twitter.com/{{contact.twitter}}">
+            <a href="https://twitter.com/{{contact.twitter}}" target="_blank">
                 {{contact.twitter}}
             </a>
         </div>
@@ -50,7 +51,7 @@
     {% if contact.gitlab %}
         <div class="contact-item">
             <i data-feather="gitlab"></i>
-            <a href="https://gitlab.com/{{contact.gitlab}}">
+            <a href="https://gitlab.com/{{contact.gitlab}}" target="_blank">
                 {{contact.gitlab}}
             </a>
         </div>
