@@ -18,6 +18,11 @@
                 <li>
                     <div class="project">{{project.project}}</div>
                     <div>{{project.description}}</div>
+                    <ul>
+                        {% for detail in project.details %}
+                        <li class="italic">{{detail}}</li>
+                        {% endfor %}
+                    </ul> 
                 </li>
             </ul>
             {% endfor %}

@@ -27,50 +27,45 @@ education:
     university: AMII
 
 skills:
-  - category: Backend
+  - category: Backend Development
     skill: 
       - .NET
-      - SQL Server
+      - APIs + Controllers
+      - SQL + SQL Server
       - Entity Framework
-      - SQL
       - Docker
       - Authentication
-      - Authorization
-      - API Design
- 
-  - category: Frontend
+      - Authorization 
+
+  - category: Frontend Development
     skill:
       - WPF + XAML
-      - Blazor
       - HTML + CSS
       - Javascript
+      - Blazor
 
-  - category: Cloud
+  - category: Cloud Expertise
     skill:
-      - Azure Focused
+      - Azure
       - Web Apps
-      - Static Apps
+      - Cloud Databases
+      - Key Vaults 
       - Blob Storage
 
   - category: Architecture
     skill:
       - Design Principles
-      - Design Patterns
-      - MVVM
-      - Testing
-      - AI Coding Assistance
+      - Patterns (MVVM)
+      - Deployment Strategies
       - Git + GitHub
-      - Deployment Assistance
- 
+      - AI Powered Coding
+      - Logging
+      - Testing
 
 
 # Profile
 profile: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-  fugiat nulla pariatur.
+  Dynamic .NET developer with specialized expertise in API development and Blazor, dedicated to delivering high-performance, scalable web applications. Experienced in crafting responsive user interfaces and seamless system integrations, I leverage my technical strengths to build solutions that prioritize user experience and functionality. Committed to continuous learning and innovation, I stay current with emerging technologies to tackle complex challenges and drive impactful improvements in application performance and design.
 
 # Experience
 experience:
@@ -79,17 +74,32 @@ experience:
     company: Okaki
     details: |
       As a .NET developer with Okaki my contributions have provided significant value to our customers. Specific project examples include&#58 
-    projects: 
+    projects:
       - project: EMR Applications
-        description: Used by doctors, nurses and pharmacists for for efficient patient management. 
-      - project: Document Management
-        description: Managing patient documentation including scanned records, images, faxes, forms, referrals and disclosures. Documents accross multiple applications would then be stored + retrieved from Azure. 
-      - project: Appointments + Booking Sites
-        description: Created public booking sites to allow for Patients to self book appointments for specific health services. Appiontments could also be created and managed by healthcare providers and pharmicists. Includes support for different services types, durations, resources and schedules. Leveraged a thrid party api to handle availability. 
-      - project: Patient Vitals Integration
-        description: Integration of third party patient vital montoring infromation. Polling of self record Patient Vitals for availability and reporting within EMR applications.
+        description: Developed .NET / WPF solutions for patient management, used by doctors, nurses, and pharmacists.
+        details:
+          - Team Developer and Mentor
+          - Significant development contributions for multiple applications + releases.
+      - project: Document Management API + Azure Cloud Storage
+        description: Managed patient documentation, including scanned records and forms, across multiple applications with Azure.  
+        details: 
+          - Lead Developer
+          - Over 25k actively managed documents across multiple applications.
+      - project: Booking Sites + Appointment Management
+        description: Built public booking platforms and internal scheduling for healthcare providers. Integrated a third-party API for availability
+        details: 
+          - Team Developer
+          - Over 70k appointments booked.
+      - project: Remote Patient Monitoring Integration
+        description: Integrated third-party monitoring of patient vitals to enhance data and reporting within EMR systems.
+        details: 
+          - Lead Developer
+          - Configured for over 40 communities
       - project: IRRS Patient Assessments
-        description: Collection of significant amounts patient information for Contact and HomeCare Assessments. Data needed to be validated to rigid specifications and then submitted to third party systems using FHIR specifcations. 
+        description: Developed a system for detailed patient data collection and validation to meet rigid specifications, with data submission to third-party systems via FHIR. 
+        details: 
+          - Lead Developer
+          - Passed conformance with the Canadian Institute for Health Information. 
     technologies_used: | 
       Go, Angular, Typescript, C++
   
