@@ -17,55 +17,51 @@ contact:
 
 
 education:
-  - degree: Bachelor, Science 
-    detail: Sp. Computer Science
+  - degree: B.Sc. Computer Science (Specialization)
     time: 2001 - 2005
     university: University of Alberta
 
-  - degree: Machine Learning Technician
+  - degree: Machine Learning Foundations Certificate
     time: 2020
-    university: AMII
+    university: Alberta Machine Intelligence Institute (AMII)
 
 skills:
-  - category: Backend Development
-    skill: 
-      - .NET
-      - APIs + Controllers
-      - SQL + SQL Server
+  - category: Backend
+    skill:
+      - C# / .NET
+      - REST APIs
+      - SQL Server
       - Entity Framework
+      - FHIR
       - Docker
-      - Authentication
-      - Authorization 
 
-  - category: Frontend Development
+  - category: Frontend
     skill:
-      - WPF + XAML
-      - HTML + CSS
-      - Javascript
+      - WPF / XAML
       - Blazor
+      - HTML / CSS
+      - JavaScript
 
-  - category: Cloud Expertise
+  - category: Azure Cloud
     skill:
-      - Azure
-      - Web Apps
-      - Cloud Databases
-      - Key Vaults 
+      - App Services
+      - Azure SQL
       - Blob Storage
+      - Key Vault
+      - Application Insights
 
-  - category: Architecture
+  - category: Practices
     skill:
-      - Design Principles
-      - Patterns (MVVM)
-      - Deployment Strategies
-      - Git + GitHub
-      - AI Powered Coding
-      - Logging
-      - Testing
+      - MVVM
+      - Git / GitHub
+      - CI/CD
+      - Unit Testing
+      - OAuth / Auth
 
 
 # Profile
 profile: |
-  Dynamic .NET developer with specialized expertise in API development and Blazor, dedicated to delivering high-performance, scalable web applications. Experienced in crafting responsive user interfaces and seamless system integrations, I leverage my technical strengths to build solutions that prioritize user experience and functionality. Committed to continuous learning and innovation, I stay current with emerging technologies to tackle complex challenges and drive impactful improvements in application performance and design.
+  .NET developer with 5+ years of experience building healthcare software used daily by doctors, nurses, and pharmacists. At Okaki, I've led and contributed to EMR applications, a document management API handling 25,000+ records, and booking platforms with 70,000+ appointments processed. I specialize in C#, .NET, WPF, Blazor, and Azure cloud services, with hands-on experience in FHIR-based health data integrations. I hold a B.Sc. in Computer Science from the University of Alberta and a Machine Learning certification from AMII.
 
 # Experience
 experience:
@@ -73,78 +69,46 @@ experience:
     time: 2020 - Present
     company: Okaki
     details: |
-      As a .NET developer with Okaki my contributions have provided significant value to our customers. Specific project examples include&#58 
+      Build and maintain healthcare software serving Indigenous communities across Canada. Key projects include&#58
     projects:
       - project: EMR Applications
-        description: Developed .NET / WPF solutions for patient management, used by doctors, nurses, and pharmacists.
+        description: Developed .NET / WPF desktop applications for patient management, used daily by doctors, nurses, and pharmacists.
         details:
           - Team Developer and Mentor
-          - Significant development contributions for multiple applications + releases.
+          - Delivered multiple application releases with features spanning charting, prescriptions, and patient workflows.
       - project: Document Management API with Azure Storage
-        description: Managed patient documentation, including scanned records and forms, across multiple applications with Azure.  
-        details: 
+        description: Designed and built a RESTful API for patient document storage using Azure Blob Storage, supporting scanned records and forms across multiple applications.
+        details:
           - Lead Developer
-          - Over 25k actively managed documents across multiple applications.
+          - Over 25,000 actively managed documents across multiple applications.
       - project: Booking Sites + Appointment Management
-        description: Built public booking platforms and internal scheduling for healthcare providers. Integrated a third-party API for availability
-        details: 
+        description: Built public-facing booking platforms and internal scheduling tools for healthcare providers, integrating third-party APIs for real-time availability.
+        details:
           - Team Developer
-          - Over 70k appointments booked.
+          - Over 70,000 appointments booked to date.
       - project: Remote Patient Monitoring Integration
-        description: Integrated third-party monitoring of patient vitals to enhance data and reporting within EMR systems.
-        details: 
+        description: Integrated third-party vital-sign monitoring into EMR systems, enabling remote health tracking and enhanced clinical reporting.
+        details:
           - Lead Developer
-          - Configured for over 40 communities
+          - Deployed across 40+ communities.
       - project: IRRS Patient Assessments
-        description: Developed a system for detailed patient data collection and validation to meet rigid specifications, with data submission to third-party systems via FHIR. 
-        details: 
+        description: Built a data collection and validation system meeting strict CIHI specifications, with FHIR-based data submission to third-party systems.
+        details:
           - Lead Developer
-          - Passed conformance with the Canadian Institute for Health Information. 
-    technologies_used: | 
-      Go, Angular, Typescript, C++
+          - Achieved conformance certification with the Canadian Institute for Health Information (CIHI).
   
   - role: Technician
     time: 2009 - 2020
     company: Shaw Communications
     details: |
-      Residential installation of Cable TV, Internet and Telephone services
+      Performed residential installation and troubleshooting of Cable TV, Internet, and Telephone services. Diagnosed network and hardware issues on-site, ensuring reliable connectivity for customers.
 
   - role: System Analyst II
     time: 2005 - 2009
     company: Haemonetics
     details: |
-      Database Web Programmer - Oracle + JAVA
+      Developed and maintained database-driven web applications using Oracle and Java. Supported blood management software systems used in hospital and clinical environments.
 
-publications:
-  - title: Random title of paper. An interesting one.
-    link: "#"
-    authors: John E. Doe
-    conference: Some conference, 2016
-
-  - title: Second title of paper. An interesting one too.
-    link: "#"
-    authors: John E. Doe
-    conference: Some conference again, 2018
-
-projects:
-  - title: Cool Project 
-    link: #
-    details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua.
-
-  - title: Cool Project 
-    link: #
-    details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua.
-
-# Volunteering
-volunteering:
-  - time: 2020-Present
-    role: PR Manager
-    company: Some random organization
-    details: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+# publications:
+# projects:
+# volunteering: 
