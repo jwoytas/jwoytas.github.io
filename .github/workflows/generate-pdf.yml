@@ -19,10 +19,25 @@ jobs:
         with:
           ref: main
 
+      - name: Check if last commit was from bot (break loop)
+        id: check_loop
+        run: |
+          LAST_AUTHOR=$(git log -1 --format='%an')
+          if [ "$LAST_AUTHOR" = "github-actions[bot]" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Skipping - last commit was from bot, avoiding infinite loop"
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Puppeteer
+        if: steps.check_loop.outputs.skip != 'true'
+
       - name: Install Puppeteer
         run: npm install puppeteer
 
       - name: Generate PDF
+        if: steps.check_loop.outputs.skip != 'true'
         run: |
           node -e "
           const puppeteer = require('puppeteer');
@@ -196,12 +211,13 @@ jobs:
           "
 
       - name: Check for changes
+        if: steps.check_loop.outputs.skip != 'true'
         id: changes
         run: |
           git diff --quiet 'assets/Resume - Jared Woytas.pdf' && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push updated PDF
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.check_loop.outputs.skip != 'true' && steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
