@@ -19,10 +19,25 @@ jobs:
         with:
           ref: main
 
+      - name: Check if last commit was from bot (break loop)
+        id: check_loop
+        run: |
+          LAST_AUTHOR=$(git log -1 --format='%an')
+          if [ "$LAST_AUTHOR" = "github-actions[bot]" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Skipping - last commit was from bot, avoiding infinite loop"
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Puppeteer
+        if: steps.check_loop.outputs.skip != 'true'
+
       - name: Install Puppeteer
         run: npm install puppeteer
 
       - name: Generate PDF
+        if: steps.check_loop.outputs.skip != 'true'
         run: |
           node -e "
           const puppeteer = require('puppeteer');
@@ -43,24 +58,137 @@ jobs:
               timeout: 60000
             });
 
-            // Additional style overrides for clean PDF output
+            // Force light mode by removing dark theme attribute
+            await page.evaluate(() => {
+              document.documentElement.removeAttribute('data-theme');
+              document.body.removeAttribute('data-theme');
+              const toggle = document.getElementById('switch');
+              if (toggle) toggle.checked = false;
+            });
+
+            // Comprehensive style overrides for clean, professional PDF output
             await page.addStyleTag({
               content: \`
-                body { margin: 0; padding: 0; }
+                :root, [data-theme='dark'] {
+                  --bg-color: #ffffff !important;
+                  --bg-color-cv: #ffffff !important;
+                  --fg-color: #00629b !important;
+                  --fg-color-dark: #023b5b !important;
+                  --fg-color-body: #5e6369 !important;
+                  --fg-color-title-sm: #688293 !important;
+                }
+                * {
+                  line-height: 1.25 !important;
+                  -webkit-print-color-adjust: exact !important;
+                  print-color-adjust: exact !important;
+                }
+                body {
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  background-color: #ffffff !important;
+                }
+                .icon-bar, .fork { display: none !important; }
                 .container {
                   margin: 0 !important;
                   padding: 0 !important;
+                  border: none !important;
                   border-radius: 0 !important;
                   box-shadow: none !important;
                   max-width: none !important;
                   min-height: auto !important;
                   width: 100% !important;
+                  margin-bottom: 0 !important;
+                  background-color: #ffffff !important;
+                }
+                .header {
+                  width: 95% !important;
+                  margin-bottom: 4px !important;
+                }
+                .profile-pic {
+                  border: none !important;
+                  min-width: 75px !important;
+                  min-height: 75px !important;
+                  max-width: 75px !important;
+                  max-height: 75px !important;
+                }
+                .header .title {
+                  font-size: 2rem !important;
+                  margin-left: 1.5rem !important;
+                }
+                .contact .contact-item svg {
+                  width: 14px !important;
+                  height: 14px !important;
+                }
+                .contact .contact-item a {
+                  font-size: 11px !important;
+                  padding-top: 2px !important;
+                  padding-left: 3px !important;
                 }
                 .container-block {
                   width: 95% !important;
                   padding: 0 !important;
                 }
-                .icon-bar { display: none !important; }
+                .experiance .title, .career-profile .title {
+                  font-size: 14px !important;
+                  margin-top: 8px !important;
+                  margin-bottom: 4px !important;
+                }
+                .experiance .title:before, .experiance .title:after,
+                .career-profile .title:before, .career-profile .title:after {
+                  border-bottom: none !important;
+                  display: none !important;
+                }
+                .career-profile .details {
+                  font-size: 11px !important;
+                  margin-top: 2px !important;
+                }
+                .career-profile .details p { margin: 0 !important; }
+                .experience-item {
+                  margin-bottom: 6px !important;
+                  page-break-inside: avoid !important;
+                }
+                .experience-item .role {
+                  font-size: 12px !important;
+                  margin-bottom: 0 !important;
+                }
+                .experience-item .company {
+                  font-size: 11px !important;
+                  margin-bottom: 2px !important;
+                }
+                .experience-item .company .time { font-size: 11px !important; }
+                .experience-item .details {
+                  font-size: 11px !important;
+                }
+                .experience-item .details p { margin: 0 0 2px 0 !important; }
+                .experience-item .details ul {
+                  margin: 1px 0 !important;
+                  padding-left: 1.2em !important;
+                }
+                .experience-item .details ul li {
+                  margin-bottom: 0 !important;
+                  padding-bottom: 0 !important;
+                }
+                .experience-item .details .project { font-size: 11px !important; }
+                .experience-item .technologies { font-size: 10px !important; }
+                .sidebar {
+                  margin-top: 10px !important;
+                }
+                .sidebar .title {
+                  font-size: 12px !important;
+                  margin-bottom: 2px !important;
+                }
+                .sidebar .education { margin-bottom: 10px !important; width: auto !important; }
+                .sidebar .education-item { margin-bottom: 6px !important; }
+                .sidebar .degree { font-size: 10.5px !important; }
+                .sidebar .university, .sidebar .time { font-size: 10px !important; }
+                .sidebar .idiom { font-size: 10.5px !important; }
+                .sidebar .skill-group {
+                  width: auto !important;
+                  margin-bottom: 8px !important;
+                }
+                .sidebar .skill { font-size: 10.5px !important; }
+                section { page-break-inside: avoid !important; }
+                a { text-decoration: none !important; }
               \`
             });
 
@@ -71,9 +199,9 @@ jobs:
               printBackground: true,
               margin: {
                 top: '0.3in',
-                right: '0.3in',
+                right: '0.4in',
                 bottom: '0.3in',
-                left: '0.3in'
+                left: '0.4in'
               }
             });
 
@@ -83,15 +211,16 @@ jobs:
           "
 
       - name: Check for changes
+        if: steps.check_loop.outputs.skip != 'true'
         id: changes
         run: |
           git diff --quiet 'assets/Resume - Jared Woytas.pdf' && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push updated PDF
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.check_loop.outputs.skip != 'true' && steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add 'assets/Resume - Jared Woytas.pdf'
-          git commit -m "Auto-generate resume PDF from live site"
+          git commit -m "Auto-generate resume PDF from live site [skip ci]"
           git push
