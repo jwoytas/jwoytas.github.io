@@ -46,10 +46,12 @@ jobs:
             // Additional style overrides for clean PDF output
             await page.addStyleTag({
               content: \`
+                * { line-height: 1.3 !important; }
                 body { margin: 0; padding: 0; }
                 .container {
                   margin: 0 !important;
                   padding: 0 !important;
+                  border: none !important;
                   border-radius: 0 !important;
                   box-shadow: none !important;
                   max-width: none !important;
@@ -61,6 +63,29 @@ jobs:
                   padding: 0 !important;
                 }
                 .icon-bar { display: none !important; }
+                .fork { display: none !important; }
+                .profile-pic { border: none !important; min-width: 80px !important; min-height: 80px !important; }
+                .header .title { font-size: 2.2rem !important; }
+                .experiance .title, .career-profile .title {
+                  margin-top: 12px !important;
+                  font-size: 15px !important;
+                }
+                .experiance .title:before, .experiance .title:after,
+                .career-profile .title:before, .career-profile .title:after {
+                  border-bottom: none !important;
+                }
+                .career-profile .details,
+                .experience-item .details,
+                .experience-item .company,
+                .experience-item .technologies { font-size: 12px !important; }
+                .experience-item { margin-bottom: 0.5rem !important; }
+                .experience-item .role { font-size: 13px !important; }
+                .experience-item .details ul { margin: 0.2em 0 !important; padding-left: 1.2em !important; }
+                .sidebar .title { font-size: 13px !important; }
+                .sidebar .education-item { margin-bottom: 10px !important; }
+                .sidebar .degree, .sidebar .university, .sidebar .time,
+                .sidebar .idiom, .sidebar .skill { font-size: 11px !important; }
+                .sidebar .skill-group { margin-bottom: 10px !important; }
               \`
             });
 
@@ -70,10 +95,10 @@ jobs:
               format: 'Letter',
               printBackground: true,
               margin: {
-                top: '0.3in',
-                right: '0.3in',
-                bottom: '0.3in',
-                left: '0.3in'
+                top: '0.25in',
+                right: '0.25in',
+                bottom: '0.25in',
+                left: '0.25in'
               }
             });
 
