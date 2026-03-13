@@ -1,0 +1,79 @@
+name: Generate Resume PDF
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate PDF
+        run: |
+          node -e "
+          const puppeteer = require('puppeteer');
+
+          (async () => {
+            const browser = await puppeteer.launch({
+              headless: true,
+              args: ['--no-sandbox', '--disable-setuid-sandbox']
+            });
+            const page = await browser.newPage();
+
+            // Navigate to the live site
+            await page.goto('https://jwoytas.github.io', {
+              waitUntil: 'networkidle0',
+              timeout: 60000
+            });
+
+            // Hide the dark mode toggle and PDF download icon for the print
+            await page.evaluate(() => {
+              const iconBar = document.querySelector('.icon-bar');
+              if (iconBar) iconBar.style.display = 'none';
+            });
+
+            // Generate PDF
+            await page.pdf({
+              path: 'assets/Resume - Jared Woytas.pdf',
+              format: 'Letter',
+              printBackground: true,
+              margin: {
+                top: '0.4in',
+                right: '0.4in',
+                bottom: '0.4in',
+                left: '0.4in'
+              }
+            });
+
+            await browser.close();
+            console.log('PDF generated successfully');
+          })();
+          "
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet 'assets/Resume - Jared Woytas.pdf' && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push updated PDF
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add 'assets/Resume - Jared Woytas.pdf'
+          git commit -m "Auto-generate resume PDF from live site"
+          git push
