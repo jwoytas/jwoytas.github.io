@@ -24,17 +24,31 @@ jobs:
           script: |
             const branch = context.ref.replace('refs/heads/', '');
 
-            // Create a pull request
-            const { data: pr } = await github.rest.pulls.create({
+            // Check for an existing open PR from this branch
+            const { data: existingPrs } = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Auto-merge: ${branch}`,
-              head: branch,
+              head: `${context.repo.owner}:${branch}`,
               base: 'main',
-              body: `Automatically merging Claude Code branch \`${branch}\` into main.`
+              state: 'open'
             });
 
-            console.log(`Created PR #${pr.number}`);
+            let pr;
+            if (existingPrs.length > 0) {
+              pr = existingPrs[0];
+              console.log(`Found existing PR #${pr.number}`);
+            } else {
+              const { data: newPr } = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Auto-merge: ${branch}`,
+                head: branch,
+                base: 'main',
+                body: `Automatically merging Claude Code branch \`${branch}\` into main.`
+              });
+              pr = newPr;
+              console.log(`Created PR #${pr.number}`);
+            }
 
             // Merge the pull request
             await github.rest.pulls.merge({
