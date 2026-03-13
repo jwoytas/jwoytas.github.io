@@ -43,11 +43,36 @@ jobs:
               timeout: 60000
             });
 
-            // Additional style overrides for clean PDF output
+            // Force light mode by removing dark theme attribute
+            await page.evaluate(() => {
+              document.documentElement.removeAttribute('data-theme');
+              document.body.removeAttribute('data-theme');
+              const toggle = document.getElementById('switch');
+              if (toggle) toggle.checked = false;
+            });
+
+            // Comprehensive style overrides for clean, professional PDF output
             await page.addStyleTag({
               content: \`
-                * { line-height: 1.3 !important; }
-                body { margin: 0; padding: 0; }
+                :root, [data-theme='dark'] {
+                  --bg-color: #ffffff !important;
+                  --bg-color-cv: #ffffff !important;
+                  --fg-color: #00629b !important;
+                  --fg-color-dark: #023b5b !important;
+                  --fg-color-body: #5e6369 !important;
+                  --fg-color-title-sm: #688293 !important;
+                }
+                * {
+                  line-height: 1.25 !important;
+                  -webkit-print-color-adjust: exact !important;
+                  print-color-adjust: exact !important;
+                }
+                body {
+                  margin: 0 !important;
+                  padding: 0 !important;
+                  background-color: #ffffff !important;
+                }
+                .icon-bar, .fork { display: none !important; }
                 .container {
                   margin: 0 !important;
                   padding: 0 !important;
@@ -57,35 +82,98 @@ jobs:
                   max-width: none !important;
                   min-height: auto !important;
                   width: 100% !important;
+                  margin-bottom: 0 !important;
+                  background-color: #ffffff !important;
+                }
+                .header {
+                  width: 95% !important;
+                  margin-bottom: 4px !important;
+                }
+                .profile-pic {
+                  border: none !important;
+                  min-width: 75px !important;
+                  min-height: 75px !important;
+                  max-width: 75px !important;
+                  max-height: 75px !important;
+                }
+                .header .title {
+                  font-size: 2rem !important;
+                  margin-left: 1.5rem !important;
+                }
+                .contact .contact-item svg {
+                  width: 14px !important;
+                  height: 14px !important;
+                }
+                .contact .contact-item a {
+                  font-size: 11px !important;
+                  padding-top: 2px !important;
+                  padding-left: 3px !important;
                 }
                 .container-block {
                   width: 95% !important;
                   padding: 0 !important;
                 }
-                .icon-bar { display: none !important; }
-                .fork { display: none !important; }
-                .profile-pic { border: none !important; min-width: 80px !important; min-height: 80px !important; }
-                .header .title { font-size: 2.2rem !important; }
                 .experiance .title, .career-profile .title {
-                  margin-top: 12px !important;
-                  font-size: 15px !important;
+                  font-size: 14px !important;
+                  margin-top: 8px !important;
+                  margin-bottom: 4px !important;
                 }
                 .experiance .title:before, .experiance .title:after,
                 .career-profile .title:before, .career-profile .title:after {
                   border-bottom: none !important;
+                  display: none !important;
                 }
-                .career-profile .details,
-                .experience-item .details,
-                .experience-item .company,
-                .experience-item .technologies { font-size: 12px !important; }
-                .experience-item { margin-bottom: 0.5rem !important; }
-                .experience-item .role { font-size: 13px !important; }
-                .experience-item .details ul { margin: 0.2em 0 !important; padding-left: 1.2em !important; }
-                .sidebar .title { font-size: 13px !important; }
-                .sidebar .education-item { margin-bottom: 10px !important; }
-                .sidebar .degree, .sidebar .university, .sidebar .time,
-                .sidebar .idiom, .sidebar .skill { font-size: 11px !important; }
-                .sidebar .skill-group { margin-bottom: 10px !important; }
+                .career-profile .details {
+                  font-size: 11px !important;
+                  margin-top: 2px !important;
+                }
+                .career-profile .details p { margin: 0 !important; }
+                .experience-item {
+                  margin-bottom: 6px !important;
+                  page-break-inside: avoid !important;
+                }
+                .experience-item .role {
+                  font-size: 12px !important;
+                  margin-bottom: 0 !important;
+                }
+                .experience-item .company {
+                  font-size: 11px !important;
+                  margin-bottom: 2px !important;
+                }
+                .experience-item .company .time { font-size: 11px !important; }
+                .experience-item .details {
+                  font-size: 11px !important;
+                }
+                .experience-item .details p { margin: 0 0 2px 0 !important; }
+                .experience-item .details ul {
+                  margin: 1px 0 !important;
+                  padding-left: 1.2em !important;
+                }
+                .experience-item .details ul li {
+                  margin-bottom: 0 !important;
+                  padding-bottom: 0 !important;
+                }
+                .experience-item .details .project { font-size: 11px !important; }
+                .experience-item .technologies { font-size: 10px !important; }
+                .sidebar {
+                  margin-top: 10px !important;
+                }
+                .sidebar .title {
+                  font-size: 12px !important;
+                  margin-bottom: 2px !important;
+                }
+                .sidebar .education { margin-bottom: 10px !important; width: auto !important; }
+                .sidebar .education-item { margin-bottom: 6px !important; }
+                .sidebar .degree { font-size: 10.5px !important; }
+                .sidebar .university, .sidebar .time { font-size: 10px !important; }
+                .sidebar .idiom { font-size: 10.5px !important; }
+                .sidebar .skill-group {
+                  width: auto !important;
+                  margin-bottom: 8px !important;
+                }
+                .sidebar .skill { font-size: 10.5px !important; }
+                section { page-break-inside: avoid !important; }
+                a { text-decoration: none !important; }
               \`
             });
 
@@ -95,10 +183,10 @@ jobs:
               format: 'Letter',
               printBackground: true,
               margin: {
-                top: '0.25in',
-                right: '0.25in',
-                bottom: '0.25in',
-                left: '0.25in'
+                top: '0.3in',
+                right: '0.4in',
+                bottom: '0.3in',
+                left: '0.4in'
               }
             });
 
