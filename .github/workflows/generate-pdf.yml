@@ -32,8 +32,6 @@ jobs:
 
       - name: Install Puppeteer
         if: steps.check_loop.outputs.skip != 'true'
-
-      - name: Install Puppeteer
         run: npm install puppeteer
 
       - name: Generate PDF
