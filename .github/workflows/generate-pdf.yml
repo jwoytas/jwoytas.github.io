@@ -19,21 +19,19 @@ jobs:
         with:
           ref: main
 
-      - name: Check if last commit was from bot (break loop)
+      - name: Check if last commit was a PDF update (break loop)
         id: check_loop
         run: |
-          LAST_AUTHOR=$(git log -1 --format='%an')
-          if [ "$LAST_AUTHOR" = "github-actions[bot]" ]; then
+          LAST_MSG=$(git log -1 --format='%s')
+          if echo "$LAST_MSG" | grep -q "Auto-generate resume PDF"; then
             echo "skip=true" >> $GITHUB_OUTPUT
-            echo "Skipping - last commit was from bot, avoiding infinite loop"
+            echo "Skipping - last commit was PDF auto-generation, avoiding infinite loop"
           else
             echo "skip=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Install Puppeteer
         if: steps.check_loop.outputs.skip != 'true'
-
-      - name: Install Puppeteer
         run: npm install puppeteer
 
       - name: Generate PDF
