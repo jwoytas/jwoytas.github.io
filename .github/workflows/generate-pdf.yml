@@ -76,7 +76,7 @@ jobs:
                   --fg-color-title-sm: #557080 !important;
                 }
                 * {
-                  line-height: 1.4 !important;
+                  line-height: 1.45 !important;
                   -webkit-print-color-adjust: exact !important;
                   print-color-adjust: exact !important;
                 }
@@ -153,7 +153,7 @@ jobs:
                 .career-profile .details p { margin: 0 !important; }
                 /* Experience items with left accent border */
                 .experience-item {
-                  margin-bottom: 12px !important;
+                  margin-bottom: 14px !important;
                   padding-left: 8px !important;
                   border-left: 2px solid #c8dce8 !important;
                 }
@@ -193,15 +193,15 @@ jobs:
                   padding-bottom: 2px !important;
                   border-bottom: 1px solid #00629b !important;
                 }
-                .sidebar .languages { margin-bottom: 16px !important; }
-                .sidebar .education { margin-bottom: 16px !important; width: auto !important; }
+                .sidebar .languages { margin-bottom: 18px !important; }
+                .sidebar .education { margin-bottom: 18px !important; width: auto !important; }
                 .sidebar .education-item { margin-bottom: 10px !important; }
                 .sidebar .degree { font-size: 10px !important; }
                 .sidebar .university, .sidebar .time { font-size: 9.5px !important; }
                 .sidebar .idiom { font-size: 10px !important; }
                 .sidebar .skill-group {
                   width: auto !important;
-                  margin-bottom: 14px !important;
+                  margin-bottom: 16px !important;
                 }
                 .sidebar .skill { font-size: 10px !important; line-height: 1.6 !important; }
                 a { text-decoration: none !important; }
