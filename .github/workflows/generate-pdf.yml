@@ -76,7 +76,7 @@ jobs:
                   --fg-color-title-sm: #688293 !important;
                 }
                 * {
-                  line-height: 1.15 !important;
+                  line-height: 1.2 !important;
                   -webkit-print-color-adjust: exact !important;
                   print-color-adjust: exact !important;
                 }
@@ -100,7 +100,7 @@ jobs:
                 }
                 .header {
                   width: 95% !important;
-                  margin-bottom: 2px !important;
+                  margin-bottom: 4px !important;
                 }
                 .profile-pic {
                   border: none !important;
@@ -126,10 +126,16 @@ jobs:
                   width: 95% !important;
                   padding: 0 !important;
                 }
+                /* Section headers with underline instead of side borders */
                 .experiance .title, .career-profile .title {
                   font-size: 13px !important;
-                  margin-top: 4px !important;
-                  margin-bottom: 2px !important;
+                  margin-top: 10px !important;
+                  margin-bottom: 4px !important;
+                  padding-bottom: 2px !important;
+                  border-bottom: 1.5px solid #00629b !important;
+                }
+                .career-profile .title {
+                  margin-top: 6px !important;
                 }
                 .experiance .title:before, .experiance .title:after,
                 .career-profile .title:before, .career-profile .title:after {
@@ -138,11 +144,11 @@ jobs:
                 }
                 .career-profile .details {
                   font-size: 10px !important;
-                  margin-top: 1px !important;
+                  margin-top: 2px !important;
                 }
                 .career-profile .details p { margin: 0 !important; }
                 .experience-item {
-                  margin-bottom: 3px !important;
+                  margin-bottom: 6px !important;
                 }
                 .experience-item .role {
                   font-size: 11px !important;
@@ -168,20 +174,22 @@ jobs:
                 .experience-item .details .project { font-size: 10px !important; }
                 .experience-item .technologies { font-size: 9px !important; }
                 .sidebar {
-                  margin-top: 6px !important;
+                  margin-top: 8px !important;
                 }
                 .sidebar .title {
                   font-size: 11px !important;
-                  margin-bottom: 1px !important;
+                  margin-bottom: 2px !important;
+                  padding-bottom: 1px !important;
+                  border-bottom: 1px solid #00629b !important;
                 }
-                .sidebar .education { margin-bottom: 6px !important; width: auto !important; }
-                .sidebar .education-item { margin-bottom: 4px !important; }
+                .sidebar .education { margin-bottom: 10px !important; width: auto !important; }
+                .sidebar .education-item { margin-bottom: 6px !important; }
                 .sidebar .degree { font-size: 10px !important; }
                 .sidebar .university, .sidebar .time { font-size: 9.5px !important; }
                 .sidebar .idiom { font-size: 10px !important; }
                 .sidebar .skill-group {
                   width: auto !important;
-                  margin-bottom: 5px !important;
+                  margin-bottom: 8px !important;
                 }
                 .sidebar .skill { font-size: 10px !important; }
                 a { text-decoration: none !important; }

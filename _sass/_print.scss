@@ -15,7 +15,7 @@
     }
 
     * {
-        line-height: 1.15;
+        line-height: 1.2;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
@@ -47,7 +47,7 @@
         // ---- HEADER ----
         .header {
             width: 95%;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
 
             .profile-pic {
                 border: none;
@@ -90,12 +90,13 @@
         }
 
         // ---- SECTION HEADERS (Career Profile, Experience) ----
-        // Remove the decorative border lines from the header mixin
         .experiance .title,
         .career-profile .title {
             font-size: 13px;
-            margin-top: 4px;
-            margin-bottom: 2px;
+            margin-top: 10px;
+            margin-bottom: 4px;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid var(--fg-color);
 
             &:before, &:after {
                 border-bottom: none !important;
@@ -105,9 +106,13 @@
 
         // ---- CAREER PROFILE ----
         .career-profile {
+            .title {
+                margin-top: 6px;
+            }
+
             .details {
                 font-size: 10px;
-                margin-top: 1px;
+                margin-top: 2px;
 
                 p {
                     margin: 0;
@@ -117,7 +122,7 @@
 
         // ---- EXPERIENCE ----
         .experiance .experience-item {
-            margin-bottom: 3px;
+            margin-bottom: 6px;
 
             .role {
                 font-size: 11px;
@@ -163,21 +168,23 @@
 
         // ---- SIDEBAR ----
         .sidebar {
-            margin-top: 6px;
+            margin-top: 8px;
 
             // Sidebar section headers (Education, Backend, Frontend, etc.)
             .title {
                 font-size: 11px;
-                margin-bottom: 1px;
+                margin-bottom: 2px;
+                padding-bottom: 1px;
+                border-bottom: 1px solid var(--fg-color);
             }
 
             .education {
-                margin-bottom: 6px;
+                margin-bottom: 10px;
                 width: auto;
             }
 
             .education-item {
-                margin-bottom: 4px;
+                margin-bottom: 6px;
             }
 
             .degree {
@@ -195,7 +202,7 @@
             .skills {
                 .skill-group {
                     width: auto;
-                    margin-bottom: 5px;
+                    margin-bottom: 8px;
                 }
 
                 .skill {
