@@ -15,7 +15,7 @@
     }
 
     * {
-        line-height: 1.35;
+        line-height: 1.4;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
@@ -48,7 +48,7 @@
         .header {
             width: 95%;
             margin-bottom: 0;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             border-bottom: 2px solid var(--fg-color);
 
             .profile-pic {
@@ -96,7 +96,7 @@
         .career-profile .title {
             font-size: 13px;
             letter-spacing: 1px;
-            margin-top: 14px;
+            margin-top: 16px;
             margin-bottom: 6px;
             padding-bottom: 3px;
             border-bottom: 1.5px solid var(--fg-color);
@@ -110,7 +110,7 @@
         // ---- CAREER PROFILE ----
         .career-profile {
             .title {
-                margin-top: 10px;
+                margin-top: 12px;
             }
 
             .details {
@@ -125,7 +125,7 @@
 
         // ---- EXPERIENCE ----
         .experiance .experience-item {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-left: 8px;
             border-left: 2px solid #c8dce8;
 
@@ -152,7 +152,7 @@
                 }
 
                 ul {
-                    margin: 1px 0;
+                    margin: 2px 0;
                     padding-left: 1.2em;
 
                     li {
@@ -173,26 +173,26 @@
 
         // ---- SIDEBAR ----
         .sidebar {
-            margin-top: 12px;
+            margin-top: 14px;
             padding-right: 12px;
 
             // Sidebar section headers
             .title {
                 font-size: 11px;
                 letter-spacing: 0.5px;
-                margin-bottom: 4px;
+                margin-bottom: 5px;
                 margin-top: 0;
                 padding-bottom: 2px;
                 border-bottom: 1px solid var(--fg-color);
             }
 
             .education {
-                margin-bottom: 14px;
+                margin-bottom: 16px;
                 width: auto;
             }
 
             .education-item {
-                margin-bottom: 8px;
+                margin-bottom: 10px;
             }
 
             .degree {
@@ -204,7 +204,7 @@
             }
 
             .languages {
-                margin-bottom: 14px;
+                margin-bottom: 16px;
             }
 
             .idiom {
@@ -214,12 +214,12 @@
             .skills {
                 .skill-group {
                     width: auto;
-                    margin-bottom: 12px;
+                    margin-bottom: 14px;
                 }
 
                 .skill {
                     font-size: 10px;
-                    line-height: 1.5;
+                    line-height: 1.6;
                 }
             }
         }

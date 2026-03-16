@@ -76,7 +76,7 @@ jobs:
                   --fg-color-title-sm: #557080 !important;
                 }
                 * {
-                  line-height: 1.35 !important;
+                  line-height: 1.4 !important;
                   -webkit-print-color-adjust: exact !important;
                   print-color-adjust: exact !important;
                 }
@@ -102,7 +102,7 @@ jobs:
                 .header {
                   width: 95% !important;
                   margin-bottom: 0 !important;
-                  padding-bottom: 8px !important;
+                  padding-bottom: 10px !important;
                   border-bottom: 2px solid #00629b !important;
                 }
                 .profile-pic {
@@ -133,13 +133,13 @@ jobs:
                 .experiance .title, .career-profile .title {
                   font-size: 13px !important;
                   letter-spacing: 1px !important;
-                  margin-top: 14px !important;
+                  margin-top: 16px !important;
                   margin-bottom: 6px !important;
                   padding-bottom: 3px !important;
                   border-bottom: 1.5px solid #00629b !important;
                 }
                 .career-profile .title {
-                  margin-top: 10px !important;
+                  margin-top: 12px !important;
                 }
                 .experiance .title:before, .experiance .title:after,
                 .career-profile .title:before, .career-profile .title:after {
@@ -153,7 +153,7 @@ jobs:
                 .career-profile .details p { margin: 0 !important; }
                 /* Experience items with left accent border */
                 .experience-item {
-                  margin-bottom: 10px !important;
+                  margin-bottom: 12px !important;
                   padding-left: 8px !important;
                   border-left: 2px solid #c8dce8 !important;
                 }
@@ -171,7 +171,7 @@ jobs:
                 }
                 .experience-item .details p { margin: 0 0 2px 0 !important; }
                 .experience-item .details ul {
-                  margin: 1px 0 !important;
+                  margin: 2px 0 !important;
                   padding-left: 1.2em !important;
                 }
                 .experience-item .details ul li {
@@ -182,28 +182,28 @@ jobs:
                 .experience-item .technologies { font-size: 9px !important; }
                 /* Sidebar */
                 .sidebar {
-                  margin-top: 12px !important;
+                  margin-top: 14px !important;
                   padding-right: 12px !important;
                 }
                 .sidebar .title {
                   font-size: 11px !important;
                   letter-spacing: 0.5px !important;
-                  margin-bottom: 4px !important;
+                  margin-bottom: 5px !important;
                   margin-top: 0 !important;
                   padding-bottom: 2px !important;
                   border-bottom: 1px solid #00629b !important;
                 }
-                .sidebar .languages { margin-bottom: 14px !important; }
-                .sidebar .education { margin-bottom: 14px !important; width: auto !important; }
-                .sidebar .education-item { margin-bottom: 8px !important; }
+                .sidebar .languages { margin-bottom: 16px !important; }
+                .sidebar .education { margin-bottom: 16px !important; width: auto !important; }
+                .sidebar .education-item { margin-bottom: 10px !important; }
                 .sidebar .degree { font-size: 10px !important; }
                 .sidebar .university, .sidebar .time { font-size: 9.5px !important; }
                 .sidebar .idiom { font-size: 10px !important; }
                 .sidebar .skill-group {
                   width: auto !important;
-                  margin-bottom: 12px !important;
+                  margin-bottom: 14px !important;
                 }
-                .sidebar .skill { font-size: 10px !important; line-height: 1.5 !important; }
+                .sidebar .skill { font-size: 10px !important; line-height: 1.6 !important; }
                 a { text-decoration: none !important; }
               \`
             });
